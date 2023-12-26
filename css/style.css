@@ -1,0 +1,31 @@
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+	  border-width: 0;
+	  background-color: #1B3154;
+    }
+    
+    footer {
+      background-color: #1B3154;
+      padding: 10px;
+    }
+	/**
+	a:active {
+	background-color: #004d99;
+	}
+	**/
+	li.no-border{
+  border-left: 0 none;
+  border-right: 0 none;
+}
+#detail {display: none;}
+#detailVt {display: none;}
+ a:hover {
+  cursor:pointer;
+ }
+ 
+ @media (max-width: 768px) {
+		.topPadding{
+		margin-top:20px
+	}
+}
