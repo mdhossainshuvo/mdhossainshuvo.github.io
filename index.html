@@ -12,7 +12,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="google-site-verification" content="JTpBU4acz-gufCN_OLapIsM9k5iuciTxOK646sPvXL0" />
 
+ 
+<?php
+/*
+	function getIpAddress()
+	{
+		$ip_address = "";
+		//whether ip is from share internet
+		if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+		  {
+			$ip_address = $_SERVER['HTTP_CLIENT_IP'];
+		  }
+		//whether ip is from proxy
+		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+		  {
+			$ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		  }
+		//whether ip is from remote address
+		else
+		  {
+			$ip_address = $_SERVER['REMOTE_ADDR'];
+		  }
+		return $ip_address;
+	}
 
+function getLines($file)
+{
+    $f = fopen($file, 'rb');
+    $lines = 0;
+
+    while (!feof($f)) {
+        $lines += substr_count(fread($f, 8192), "\n");
+    }
+
+    fclose($f);
+
+    return $lines;
+}
+
+//$visitFile = fopen("visitors/visitors.txt", "wb") or die("Unable to open file!");
+//fwrite($visitFile, getIpAddress()."\n");
+$count = getLines("1816568.txt") + 1;
+file_put_contents("1816568.txt", $count. " " .getIpAddress()."\n",FILE_APPEND);
+//fclose($visitFile);
+*/
+?> 
  
  
 <script>
@@ -31,6 +75,24 @@ function showDetailFunctionVt() {
     detailTextVt.style.display = "inline";
   }
 }
+
+function showDetailFunctionVtAck() {
+  var dotsVt = document.getElementById("dotsVtAck");
+  var detailTextVt = document.getElementById("detailVtAck");
+  var btnTextVt = document.getElementById("showBtnVtAck");
+
+  if (dotsVtAck.style.display === "none") {
+    dotsVtAck.style.display = "inline";
+    btnTextVt.innerHTML = "Acknowledgement"; 
+    detailTextVt.style.display = "none";
+  } else {
+    dotsVtAck.style.display = "none";
+    btnTextVt.innerHTML = "</br>&nbsp;&nbsp;&nbspSee less"; 
+    detailTextVt.style.display = "inline";
+	detailTextVt.style.marginLeft = '10px';
+  }
+}
+
 function showDetailFunction() {
   var dots = document.getElementById("dots");
   var detailText = document.getElementById("detail");
@@ -63,6 +125,13 @@ function showDetailFunction() {
 };
 document.addEventListener('contextmenu', event => event.preventDefault());
 */
+
+ function showPop() {
+    document.getElementById('popup').style.display = 'block';
+  }
+  function hidePop() {
+    document.getElementById('popup').style.display = 'none';
+  }
 </script>
 
 
@@ -79,12 +148,12 @@ document.addEventListener('contextmenu', event => event.preventDefault());
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html" style="color: white;"><b style="font-size:22px">MD HOSSAIN SHUVO</b></a>
+      <a class="navbar-brand" href="index.php" style="color: white;"><b style="font-size:22px">MD HOSSAIN SHUVO</b></a>
     </div>
     <div class="collapse navbar-collapse"  id="myNavbar" style="font-weight:bold;">
       <ul class="nav navbar-nav">
         <!--<li><a href="#" style="color: white;">Research</a></li>-->
-        <li><a href="#projects" style="color: white;">Projects</a></li>
+        <li><a href="#teaching" style="color: white;">Teaching</a></li>
 		<li><a href="#news" style="color: white;">News</a></li>
 		<li><a href="#publications" style="color: white;">Publications</a></li>
 		<li><a href="#academics" style="color: white;">Academics</a></li>
@@ -115,50 +184,91 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 				<div class="col-md-2"> 
 					<img src="img/profile.jpg"  style="width:100%;">
 				</div>
-				<div class="col-md-10 topPadding"> 
-					  <p style="text-align: justify; overflow:hidden;">I am a Ph.D. candidate in the <a href="https://cs.vt.edu/" target="_blank"> Department of Computer Science</a> at 
-					  <a href="https://vt.edu/" target="_blank">Virginia Tech</a>. 
-					  I am conducting my research under the supervision of my advisor, <a href="https://people.cs.vt.edu/dbhattacharya/" target = "blank"><b>Dr. Debswapna Bhattacharya</b></a>. 
-					  My research interests are,</br></br> >Computational Biology</br>>Applied Machine Learning </br> >Data Science in Bioinformatics</br></br>
+				<div class="col-md-10"> 
+					  <p style="text-align: justify; overflow:hidden;">I am a tenure-track Assistant Professor in the 
+					  <a href="https://www.pvamu.edu/cs" target="_blank"> Department of Computer Science</a> at 
+					  <a href="https:www.pvamu.edu" target="_blank">Prairie View A&M University</a>. 
+					  My research interests include:</br></br> > Computational Biology</br>> Machine Learning </br>> Data Analytics</br>> Artificial Intelligence</br></br>
 
-I am interested in developing computational methods for macromolecules to understand their structures and functions. 
-I am particularly interested in applying data-driven machine-learning approaches, specifically those based on deep learning, for estimating the accuracy of computational models of
-protein molecules to understand their structural reliability (also known as: protein model quality estimation). I am also 
-interested in harnessing the power of deep learning and optimization algorithms to improve the structural accuracy of computationally generated protein 
-models for optimizing their reliability (also known as: protein model refinement). Therefore, the objectives of my current research are twofold: 
-to gain insight into protein molecules in the absence of experimental data by analyzing the structural properties of their computational models and to improve their structural 
-accuracy to align more closely with the experimental structures.
+I am conducting interdisciplinary research at the intersection of structural biology, machine learning, and data science. 
+Broadly, I am interested in developing computational methods for macromolecules to understand their structures and functions. 
+My recent projects focus on harnessing the power of deep learning techniques, including geometric deep learning and 
+protein language models, to understand the structural reliability of computationally generated protein molecules.
 </br></br>
-I am a recepient of the <a href='https://cs.vt.edu/Graduate/Funding/fellowships.html' target='_blank'>Pratt Fellowship Award, 2023</a> at <a href="https://vt.edu/" target="_blank">Virginia Tech</a>.
-I am also the recipient of the 1<sup>st</sup> place prize in the Young Scientist Excellence Award competition (<a href='http://2022.mcbios.com/'>MCBIOS, 2022</a>) as well as multiple conference and travel fellowships.
+I am a recipient of the <a href='https://cs.vt.edu/Graduate/Funding/fellowships.html' target='_blank'>Pratt Fellowship Award, 2023</a> at <a href="https://vt.edu/" target="_blank">Virginia Tech</a>.
+I am also the recipient of the 1<sup>st</sup> place prize in the Young Scientist Excellence Award competition (<a href='http://2022.mcbios.com/'>MCBIOS, 2022</a>) 
+as well as multiple conference and travel fellowships.
 </br></br>
-Prior to starting my Ph.D. at <a href='https://cs.vt.edu/' target='_blank'>Virginia Tech</a>, I was actively conducting my research as a Ph.D. student at 
-<a href='https://www.eng.auburn.edu/comp/' target='_blank'>Auburn University</a> (2018 - 2021). 
-I received my Master's degree from <a href='https://www.aamu.edu/academics/graduate-studies/master-science-computer-science.html' target='_blank'>Alabama A&M University</a> (2017) 
-and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Bangladesh University of Business and Technology</a> (2014).
+Prior to joining PVAMU, I obtained my Ph.D. in <a href='https://cs.vt.edu/'>Computer Science</a> from <a href='https://vt.edu/' target='_blank'>Virginia Tech</a> in 2023 under the
+supervision of <a href='https://people.cs.vt.edu/dbhattacharya/' target = '_blank'>Dr. Debswapna Bhattacharya</a>.
 					  
 					  
 					  </br></br>
 					  
 					  <a href="https://scholar.google.com/citations?user=NwufOZUAAAAJ&hl=en" target="blank" style="text-decoration:none">
 					  <img src='img/google_scholar.png' style='width:18px; padding-bottom:7px;'><b>Google Scholar</b></a>&nbsp&nbsp
-					  
+					  <!--
 					   <a href="https://twitter.com/mzs0149" target="blank" style="text-decoration:none"><img src='img/twitter.png' style='width:18px; padding-bottom:4px'><b> 
 					   Twitter</a></br></b></p>
+					   -->
 				</div>
+				
 			</div>
+			
 
+<!--------------------Teaching---------------------->
+<!--                                              -->
+<!--                                              -->
+<!-------------------------------------------------->
+<!--
+		  <div id = "teaching" style="padding-top:2%">
+		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>TEACHING</b></h3>
+		  
+			
+		  </div>
+-->
 
 <!----------------------News------------------------>
 <!--                                              -->
 <!--                                              -->
 <!-------------------------------------------------->
 		  <div id = "news" style="padding-top:2%">
-		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>NEWS</b></h3> 
+		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>NEWS</b></h3>
 		 
 
 		  <div class="list-group" style="max-height:300px; overflow-y: scroll;">
 			<table>
+			<tr>
+				<td style="background-color:#F3F2F2; width:100px; text-align: center; line-height:30px; border-bottom: 1px solid gray;"><b>01/02/2024</b><td>
+				<td><span style="margin-left:10px">I joined <a href='https://www.pvamu.edu/'>Prairie View A&M University</a> as an Assistant Professor in 
+				the <a href='https://www.pvamu.edu/cs'>Department of Computer Science</a></td>
+			</tr>
+			<tr>
+				<td style="background-color:#F3F2F2; width:100px; text-align: center; line-height:30px; border-bottom: 1px solid gray;"><b>12/05/2023</b><td>
+				<td>
+				 <span id="dotsVtAck"></span> 
+				 <span style="margin-left:10px">Successfully defended Ph.D. dissertation.</span> <span id="detailVtAck" style="display:none"></br>
+				 
+				 <span style="margin-left:10px"><b>Acknowledgment:</b></span></br>
+				 <span style="margin-left:10px; display: inline-block">I express my sincere gratitude to my advisor, <b>Dr. Debswapna Bhattacharya</b>, for providing me with the 
+				 opportunity and for his guidance and support.</br>
+				 
+				 I would also like to extend my appreciation to my committee members, including <b>Dr. Lenwood S. Heath, 
+				 Dr. Alexey V. Onufriev, Dr. Liqing Zhang, and Dr. Scott Emrich</b>, for generously dedicating their time to serve on my Dissertation 
+				 Committee.</br> 
+				 Finally, I sincerely appreciate the support of my fellow labmates and collaborators in the Bhattacharya lab including: 
+				 <b>Dr. Sutanu Bhattacharya, Rahul Alapati, Rahmatullah Roche, Muhammad Gulfam, Bernard Moussad, Mohimenul Karim, Sumit Tarafder, 
+				 Nabayan Chaudhury, Maryam Haghani, and Dr. Trevor Norton</b>.</span>
+
+			 </span>
+			  <a onclick="showDetailFunctionVtAck()" id="showBtnVtAck">Acknowledgment</a>
+			  
+			</td>
+			</tr>
+			<tr>
+				<td style="background-color:#F3F2F2; width:100px; text-align: center; line-height:30px; border-bottom: 1px solid gray;"><b>11/10/2023</b><td>
+				<td><span style="margin-left:10px">Accepted a tenure-track Assistant Professor position in the <a href='https://www.pvamu.edu/engineering/departments/cs/'>Computer Science</a> department at <a href='https://www.pvamu.edu/'>Prairie View A&M University</a></span></td>
+			</tr>
 			<tr>
 				<td style="background-color:#F3F2F2; width:100px; text-align: center; line-height:30px; border-bottom: 1px solid gray;"><b>10/25/2023</b><td>
 				<td><span style="margin-left:10px">Passed the <a href='https://cs.vt.edu/' target='_blank'>CS@VT</a> <a href='https://cs.vt.edu/Graduate/Degrees/Doctorate.html' target = '_blank'>Research Defense</a></span></td>
@@ -359,12 +469,12 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 <!--                                              -->
 <!--                                              -->
 <!-------------------------------------------------->
-		  <div id = "publications" style="padding-top:2%">
+		  <div id = "publications" style="padding-top:2%;">
 		  
 		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>PUBLICATIONS</b></h3> 
 		  </br>
 			
-		
+		<div style = "max-height:400px; overflow-y: scroll;">
 		  <ul class="list-group">
 		  
 			<b>2023</b>
@@ -376,19 +486,19 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 		  </li>
 		  
 		  <li class="list-group-item no-border"><b>Md Hossain Shuvo</b>, Mohimenul Karim, Debswapna Bhattacharya.</br>
-		  iQDeep: an integrated web server for protein scoring using multiscale deep learning models<br><b>Journal of Molecular Biology, 168057, 2023 [Impact Factor: 5.6]</b></br>
+		  iQDeep: an integrated web server for protein scoring using multiscale deep learning models<br><b>Journal of Molecular Biology, 168057, 2023</b></br>
 		  <a href="https://www.sciencedirect.com/science/article/pii/S0022283623001134/pdfft?md5=9abd1243f9425b6788fe25b8bb19fbbe&pid=1-s2.0-S0022283623001134-main.pdf" target = "blank">PDF</a> |
 		  <a href = "http://fusion.cs.vt.edu/iQDeep/" target = "blank">Server</a>
 		  </li>
 		  
 		  <li class="list-group-item no-border">Rahmatullah Roche, Bernard Moussad, <b>Md Hossain Shuvo</b>, Debswapna Bhattacharya.</br>
-		  E(3) equivariant graph neural networks for robust and accurate protein–protein interaction site prediction<br><b>PLOS Computational Biology, e1011435 [Impact Factor: 4.779]</b></br>
+		  E(3) equivariant graph neural networks for robust and accurate protein–protein interaction site prediction<br><b>PLOS Computational Biology, e1011435</b></br>
 		  <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1011435&type=printable" target = "blank">PDF</a> |
 		  <a href = "https://github.com/Bhattacharya-Lab/EquiPPIS" target = "blank">GitHub</a>
 		  </li>
 		  
 		  <li class="list-group-item no-border">Sutanu Bhattacharya, Rahmatullah Roche, <b>Md Hossain Shuvo</b>, Bernard Moussad, Debswapna Bhattacharya.</br>
-		  Contact-Assisted Threading in Low-Homology Protein Modeling<br><b>Methods in Molecular Biology book series, vol. 2627, 2023 [Impact Factor: 10.71]</b></br>
+		  Contact-Assisted Threading in Low-Homology Protein Modeling<br><b>Methods in Molecular Biology book series, vol. 2627, 2023</b></br>
 		  <a href="https://link.springer.com/protocol/10.1007/978-1-0716-2974-1_3" target = "blank">PDF</a>
 		  </li>
 		  
@@ -400,12 +510,13 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 		  
 		  </ul>
 		  
+		  
 		  <ul class="list-group">
 		  
 			<b>2022</b>
 		  
 		  <li class="list-group-item no-border">Rahmatullah Roche, Sutanu Bhattacharya, <b>Md Hossain Shuvo</b>, Debswapna Bhattacharya.</br>
-		 rrQNet: Protein contact map quality estimation by deep evolutionary reconciliation <br><b>Proteins: Structure, Function, and Bioinformatics, </b>(2022).<b>[Impact Factor: 4.088]</b></br>
+		 rrQNet: Protein contact map quality estimation by deep evolutionary reconciliation <br><b>Proteins: Structure, Function, and Bioinformatics, </b>(2022).</br>
 		  <a href="https://pubmed.ncbi.nlm.nih.gov/35751651/" target="blank">PDF</a> |
 		  <a href = "https://github.com/Bhattacharya-Lab/rrQNet" target = "blank">GitHub</a>
 		  </br>
@@ -418,13 +529,13 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 			<b>2021</b>
 
 		  <li class="list-group-item no-border">Andriy Kryshtafovych,..., <b>Md Hossain Shuvo</b>., ...,</br>
-		  Modeling SARS-CoV2 proteins in the CASP-commons experiment<br><b>Proteins: Structure, Function, and Bioinformatics, </b>(2021). <b>[Impact Factor: 4.088]</b></br>
+		  Modeling SARS-CoV2 proteins in the CASP-commons experiment<br><b>Proteins: Structure, Function, and Bioinformatics, </b>(2021). <b></b></br>
 		  <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26231" target="blank">PDF</a>
 		  </br>
 		  
 		  <li class="list-group-item no-border"><b>Md Hossain Shuvo</b>, Muhammad Gulfam, Debswapna Bhattacharya.</br>
 		  DeepRefiner: high-accuracy protein structure refinement by deep network calibration<br><b>Nucleic Acids Research</b>, Web Server Issue, gkab361 (2021).
-		  <b>[Impact Factor: 19.160]</b></br>
+		  </br>
 		  <b>Selected for Highlight Talk at 13<sup>th</sup> ACM-BCB conference</b>
 		  </br>
 		  <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkab361/6276914" target = "blank">PDF</a> |
@@ -432,7 +543,7 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 
 		<li class="list-group-item no-border">Sutanu Bhattacharya, Rahmatullah Roche, <b>Md Hossain Shuvo</b>, Debswapna Bhattacharya.</br>
 			Recent Advances in Protein Homology Detection Propelled by Inter-Residue Interaction Map Threading
-		  of protein structural models<br><b>Frontiers in Molecular Biosciences</b>, 8: 643752 (2021). <b>[Impact Factor: 5.0]</b></br>
+		  of protein structural models<br><b>Frontiers in Molecular Biosciences</b>, 8: 643752 (2021). </br>
 		  <a href="https://www.frontiersin.org/articles/10.3389/fmolb.2021.643752/full" target="blank">PDF</a> | 
 		<a href="https://www.frontiersin.org/research-topics/13794/a-journey-through-50-years-of-structural-bioinformatics-in-memoriam-of-cyrus-chothia#articles" target="_blank">In memoriam of Cyrus Chothia</a>
 
@@ -445,18 +556,19 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 		  <b>2020</b>
 		  <li class="list-group-item no-border"><b>Md Hossain Shuvo</b>, Sutanu Bhattacharya, Debswapna Bhattacharya.</br>QDeep: distance-based protein model 
 		  quality estimation by residue-level ensemble error classifications using stacked deep residual 
-		  neural networks<br><b>ISMB Proceedings (2020), Bioinformatics</b>, 36(S1): i285-i291 (2020). <b>[Acceptance Rate: 20%, Impact Factor: 6.937]</b></br>
+		  neural networks<br><b>ISMB Proceedings (2020), Bioinformatics</b>, 36(S1): i285-i291 (2020).</br>
 		  <a href="https://academic.oup.com/bioinformatics/article/36/Supplement_1/i285/5870505" target = "blank">PDF</a> |
 		  <a href = "https://github.com/Bhattacharya-Lab/QDeep" target = "blank">GitHub</a></li>
 
 		  <li class="list-group-item no-border">Rahul Alapati, <b>Md Hossain Shuvo</b>, Debswapna Bhattacharya.</br> SPECS: Integration 
 		  of side-chain orientation and global distance-based measures for improved evaluation 
-		  of protein structural models<br><b>PLOS ONE</b>, 15(2): e0228245 (2020). <b>[Impact Factor: 3.24]</b></br>
+		  of protein structural models<br><b>PLOS ONE</b>, 15(2): e0228245 (2020).</br>
 		  <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0228245&type=printable" target="blank">PDF</a> | 
 		  <a href = "https://github.com/Bhattacharya-Lab/SPECS" target="blank">GitHub</a> |
 		  <a href = "http://watson.cse.eng.auburn.edu/SPECS/" target="blank">Server</a></li>
 
 </ul>
+		  </div>
 		  </div>
 		  
 <!--------------------Academics--------------------->
@@ -472,27 +584,21 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 			<b>EDUCATION</b>
 
 		  <li class="list-group-item no-border">
-		  <b>Ph.D. Candidate in the Department of Computer Science</b></br>
+		  <b>Ph.D. in Computer Science</b></br>
 		  Virginia Tech</br>
-		  2021 - Present
-		  </li>
-
-		  <li class="list-group-item no-border">
-		  <b>Ph.D. Student in the Department of Computer Science and Software Engineering</b></br>
-		  Auburn University</br>
-		  2018 - 2021
-		  </li>			
+		  Dec 2023
+		  </li>		
 
 		  <li class="list-group-item no-border">
 		  <b>M.Sc. in Computer Science</b></br>
 		  Alabama A&M University</br>
-		  2015 - 2017
+		  July 2017
 		  </li>
 
 		  <li class="list-group-item no-border">
 		  <b>B.Sc. in Computer Science and Engineering</b></br>
 		  Bangladesh University of Business and Technology</br>
-		  2010 - 2014
+		  July 2014
 		  </li>
 </ul>
 
@@ -555,14 +661,29 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 			<b>ACADEMIC EXPERIENCES</b>
 
 		  <li class="list-group-item no-border">
+			  <b>Assistant Professor</b></br>
+			  Prairie View A&M University</br>
+			  Jan 2024 - Present
+			 <span id="dotsVt"></span> 
+			 <span id="detailVt"></br></br>
+				 1.	COMP 3305: Analysis of Algorithms</br>
+				 2.	COMP 3322: Software Engineering</br>
+				 3.	COMP 1337: Computer Science II</br>
+				 4.	COMP 1122: Computer Science Lab II<br>
+			 </span></br>
+			  <a onclick="showDetailFunctionVt()" id="showBtnVt">Show details</a>
+		  </li>
+		  
+		  
+		  <li class="list-group-item no-border">
 			  <b>Graduate Research Assistant</b></br>
 			  Virginia Tech</br>
-			  Aug 2021 - Present
+			  Aug 2021 - Dec 2023
 			 <span id="dotsVt"></span> 
 			 <span id="detailVt"></br></br>
 				 <b>Graduate Research Assistant:</b></br>
 				 Under the supervision of <a href="https://people.cs.vt.edu/dbhattacharya/" target = "blank"><b>Dr. Debswapna Bhattacharya</b></a> </br>
-				 <b>VTech:</b> Aug 2021 - Present <br>
+				 <b>VTech:</b> Aug 2021 - Dec 2023 <br>
 				 <b>AU:</b> Jan 2018 - Jul 2021
 			 </span></br>
 			  <a onclick="showDetailFunctionVt()" id="showBtnVt">Show details</a>
@@ -611,7 +732,7 @@ and Bachelor's degree from <a href='https://cse.bubt.edu.bd/' target='_blank'>Ba
 		  <div id = "contacts" style="padding-top:2%">
 		  
 		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>CONTACTS</b></h3>
-		  <i class="fa fa-envelope" aria-hidden="true" style="padding-right:10px"></i>mhshuvo[AT]vt.edu</br></br>
+		  <i class="fa fa-envelope" aria-hidden="true" style="padding-right:10px"></i>mhshuvo[AT]pvamu.edu</br></br>
 
     </div>
   </div>
