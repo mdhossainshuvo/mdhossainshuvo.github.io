@@ -94,7 +94,7 @@ function showDetailFunction() {
     <div class="collapse navbar-collapse"  id="myNavbar" style="font-weight:bold;">
       <ul class="nav navbar-nav">
         <!--<li><a href="#" style="color: white;">Research</a></li>-->
-        <li><a href="#teaching" style="color: white;">Teaching</a></li>
+        <li><a href="#research" style="color: white;">Research</a></li>
 		<li><a href="#news" style="color: white;">News</a></li>
 		<li><a href="#publications" style="color: white;">Publications</a></li>
 		<li><a href="#academics" style="color: white;">Academics</a></li>
@@ -197,6 +197,7 @@ particularly in the realm of Computational Biology, Artificial Intelligence, and
 					   <b><u><center>TEACHING</center></u></b></br>
 					   <center><b>Courses I frequently teach</b></center></br>
 						<ol>
+						<b>COMP 5690:</b> Masters Thesis </br>
 						<b>CINS 5306:</b> Data Structures and Algorithms </br>
 						<b>COMP 4307:</b> Network Security </br>
 						<b>COMP 4207:</b> Senior Design </br>
@@ -214,18 +215,6 @@ particularly in the realm of Computational Biology, Artificial Intelligence, and
 				
 			</div>
 			
-
-<!--------------------Teaching---------------------->
-<!--                                              -->
-<!--                                              -->
-<!-------------------------------------------------->
-<!--
-		  <div id = "teaching" style="padding-top:2%">
-		  <h3 style = "border-bottom: 5px solid #1B3154; width:10%"><b>TEACHING</b></h3>
-		  
-			
-		  </div>
--->
 
 <!----------------------News------------------------>
 <!--                                              -->
@@ -580,6 +569,286 @@ particularly in the realm of Computational Biology, Artificial Intelligence, and
 		  </div>
 
 		  </div>
+		  
+<!--------------------Research---------------------->
+<!--                                              -->
+<!--                                              -->
+<!-------------------------------------------------->
+
+<div id="research" style="padding-top:2%">
+  <h3 style="border-bottom: 5px solid #1B3154; width:10%"><b>RESEARCH</b></h3>
+
+  <div class="row equal-height" style="margin-top: 30px;">
+
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/deeprefiner.jpg" class="card-img" alt="Protein Structure Quality">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>Protein Structure Quality Assessment</b></h4>
+        <p>Deep learning for error estimation, structure scoring, and refinement</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal1'); return false;">Read more</a>
+      </div>
+
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h4>Protein Structure Quality Assessment & Refinement</h4>
+          <p><b>Relevant works:</b></p>
+          <ul>
+            <li>EquiRank: PPI interface quality estimation with PLM + E(3)-equivariant GNN</li>
+            <li>PIQLE: PPI interface quality via deep graph learning</li>
+            <li>iQDeep: Web server for multiscale protein scoring</li>
+            <li>DeepRefiner: Deep learning–based protein structure refinement</li>
+            <li>QDeep: Error estimation using ResNets</li>
+			<li>rrQNet: Protein contact map quality estimation by deep evolutionary reconciliation</li>
+            <li>SPECS: Structure evaluation with side-chain orientation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/equirank.png" class="card-img" alt="Molecular Interactions">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>Protein–Protein & Protein–Nucleic Acid Interactions</b></h4>
+        <p>Equivariant graph neural networks for binding site prediction, interface identification, and interface accuracy estimation</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal2'); return false;">Read more</a>
+      </div>
+
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h4>Interaction Prediction & Interface Modeling</h4>
+          <p><b>Relevant works:</b></p>
+          <ul>
+			<li>PIQLE: PPI interface quality via deep graph learning</li>
+			<li>EquiRank: PPI interface quality estimation with PLM + E(3)-equivariant GNN</li>
+            <li>EquiPNAS: Protein–nucleic acid binding site prediction with PLMs + E(3)-GNN</li>
+            <li>EquiPPIS: E(3)-equivariant GNN for PPI site prediction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/equirank.jpg" class="card-img" alt="Geometric Deep Learning">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>Large Language Models (LLMs)</b></h4>
+        <p>Protein Language Models (pLMs) for molecular embeddings</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal3'); return false;">Read more</a>
+      </div>
+
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <h4>Applying Protein Language Models (PLMs) for molecular interaction representation to improve prediction accuracy</h4>
+          <ul>
+			<li>EquiRank: PPI interface quality estimation with PLM + E(3)-equivariant GNN</li>
+            <li>EquiPNAS: Protein–nucleic acid binding site prediction with PLMs + E(3)-GNN</li>
+            <li>EquiPPIS: E(3)-equivariant GNN for PPI site prediction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/homology_1.jpg" class="card-img" alt="Protein Homology Modeling">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>Protein Homology Modeling</b></h4>
+        <p>Threading, template-based modeling, and contact-assisted threading for accurate protein structure prediction</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal5'); return false;">Read more</a>
+      </div>
+
+      <div id="modal5" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <h4>Applying protein threading, template-based modeling, and contact-assisted threading to 
+		  improve protein structure prediction, particularly for low-homology proteins</h4>
+          <p><b>Relevant work:</b></br>
+		  <ul>
+		  <li>Sutanu Bhattacharya, Rahmatullah Roche, Md Hossain Shuvo, Bernard Moussad, Debswapna Bhattachary, Contact-Assisted Threading in Low-Homology Protein Modeling, 
+		  Methods in Molecular Biology book series, vol. 2627, 2023</li>
+		  </ul>
+		  </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Second row -->
+  <div class="row equal-height" style="margin-top: 10px;">
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/casp_commons.jpg" class="card-img" alt="COVID-19 Modelling">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>COVID-19 Modelling</b></h4>
+        <p><a href='https://predictioncenter.org/caspcommons/' target='_blank'>CASP_Commons:</a>Community-wide SARS-2-CoV structure modeling initiative</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal6'); return false;">Read more</a>
+      </div>
+
+      <div id="modal6" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal6')">&times;</span>
+          <h4>Modeling SARS-CoV-2 proteins in the CASP initiative with a focus on residue-level accuracy of predicted structures</h4>
+          <p><b>Relevant work:</b></br>
+		  <ul>
+		  <li> Andriy Kryshtafovych,..., <b>Md Hossain Shuvo</b>, Modeling SARS-CoV2 proteins in the CASP-commons experimentProteins: Structure, Function, and Bioinformatics, 
+		 (2021) </li>
+		  </ul>
+		  </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+      <div class="research-card text-center">
+        <img src="img/scorecard.jpg" class="card-img" alt="Applied Machine Learning">
+        <h4 style="margin-top: 15px; color: #1B3154;"><b>Applied Machine Learning</b></h4>
+        <p>AI applications in intelligent transportation and sustainable materials discovery</p>
+        <a href="#" class="read-more-btn" onclick="openModal('modal7'); return false;">Read more</a>
+      </div>
+
+      <div id="modal7" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal7')">&times;</span>
+          <h4>Applying data-driven AI approaches to intelligent transportation and sustainable materials modeling</h4>
+          <p><b>Relevant work:</b></br>
+		  <ul>
+<li>Ongoing: ITS Scorecard Framework and Prototype Tool Development (in collaboration with NCIT@PVAMU and Rutgers University)</li>
+<li>Ongoing: PIER: Data-Driven Approaches for Novel Sustainable Materials in Magnetic, Optoelectronic, and Radiation Detection Technologies 
+(in collaboration with the Department of Physics@PVAMU)</li>
+
+		  </ul></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .row.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row.equal-height > [class*="col-"] {
+    display: flex;
+  }
+
+  .research-card {
+    border: 3px solid #1B3154;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: default;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+
+  .research-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+.research-card img.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: scale-down; 
+    object-position: center;
+    border-radius: 8px;
+}
+
+  .read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1B3154;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 3px solid #1B3154;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .close {
+    color: #1B3154;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: red;
+  }
+</style>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+</script>
 
 
 <!-------------------publications------------------->
