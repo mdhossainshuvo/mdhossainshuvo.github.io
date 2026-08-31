@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      :root { color-scheme: light; --navy: #17345b; --blue: #1769c2; --ink: #243247; --muted: #5c6b7f; --line: #d8e2ef; }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 16px; color: var(--ink); font: 15px/1.55 Inter, "Segoe UI", Arial, sans-serif; background: #fff; }
+      form { display: grid; gap: 13px; }
+      .field { display: grid; gap: 5px; }
+      label { color: var(--navy); font-size: 13px; font-weight: 700; }
+      input, select, textarea { width: 100%; padding: 10px 11px; border: 1px solid #cbd7e5; border-radius: 8px; color: var(--ink); background: #fff; font: inherit; }
+      input:focus, select:focus, textarea:focus { outline: 3px solid #d9eaff; border-color: var(--blue); }
+      textarea { min-height: 95px; resize: vertical; }
+      .hint { margin: 0; color: var(--muted); font-size: 12px; }
+      button { justify-self: start; min-width: 170px; padding: 11px 18px; border: 0; border-radius: 8px; color: #fff; background: var(--navy); font: inherit; font-weight: 700; cursor: pointer; }
+      button:hover { background: var(--blue); }
+      button:disabled { opacity: .65; cursor: wait; }
+      #status { min-height: 24px; margin: 0; font-weight: 650; }
+      #status.success { color: #176b3a; }
+      #status.error { color: #a52828; }
+      .honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+      @media (max-width: 520px) { body { padding: 12px; } button { width: 100%; } }
+    </style>
+  </head>
+  <body>
+    <form id="applicationForm" onsubmit="submitForm(event)">
+      <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" autocomplete="name" maxlength="120" required></div>
+      <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+      <div class="field"><label for="level">Current or intended level *</label><select id="level" name="level" required><option value="">Select one</option><option>Prospective graduate student</option><option>Undergraduate student</option><option>Other</option></select></div>
+      <div class="field"><label for="interests">Research interests *</label><textarea id="interests" name="interests" maxlength="1200" required placeholder="Tell us what you would like to research."></textarea></div>
+      <div class="field"><label for="message">Additional message</label><textarea id="message" name="message" maxlength="4000" placeholder="Optional"></textarea></div>
+      <div class="field"><label for="cv">CV (PDF, maximum 10 MB) *</label><input id="cv" name="cv" type="file" accept=".pdf,application/pdf" required><p class="hint">Please attach a PDF CV or résumé.</p></div>
+      <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <button id="submitButton" type="submit">Submit application</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        var form = document.getElementById('applicationForm');
+        if (!form.reportValidity()) return;
+        var button = document.getElementById('submitButton');
+        var status = document.getElementById('status');
+        button.disabled = true;
+        button.textContent = 'Submitting…';
+        status.className = '';
+        status.textContent = 'Uploading your application securely…';
+        google.script.run
+          .withSuccessHandler(function (result) {
+            form.reset();
+            status.className = 'success';
+            status.textContent = (result && result.message) || 'Thank you. Your application has been submitted.';
+            button.disabled = false;
+            button.textContent = 'Submit application';
+          })
+          .withFailureHandler(function (error) {
+            status.className = 'error';
+            status.textContent = (error && error.message) || 'Unable to submit right now. Please try again.';
+            button.disabled = false;
+            button.textContent = 'Submit application';
+          })
+          .submitApplication(form);
+      }
+    </script>
+  </body>
+</html>
